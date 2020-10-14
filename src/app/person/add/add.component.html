@@ -8,16 +8,27 @@
         <form action="">
             <div class="form-group">
                 <label for="">Nombres</label> 
-                <input  [(ngModel)]="persona.nombre" name="nombre" type="text" class="form-control" />
+                <input  [(ngModel)]="persona.nombre" name="nombre" type="text" class="form-control" placeholder="firstName"  />
+                
             </div>
             <div class="form-group">
                 <label for="">Apellidos</label> 
-                <input  [(ngModel)]="persona.apellido" name="apellido" type="text" class="form-control" />
+                <input  [(ngModel)]="persona.apellido" name="apellido" type="text" class="form-control" placeholder="lastName"/>
             </div>
             <div class="form-group">
                 <label for="">Emails</label> 
-                <input  [(ngModel)]="persona.email" name="email" type="text" class="form-control" />
+                <input  [(ngModel)]="persona.email" name="email" type="text" class="form-control" placeholder="Email"/>
             </div>
+            <div>
+                <label for="">Genero</label> 
+                <p>
+                     <select name="genero" [(ngModel)]="persona.codigoGenero"  id="genero"  >
+                     <option value="0">Selecciona una opción</option>
+                     <option [value]="item" *ngFor="let item of generos" [value]="item.codigo">{{item.descripcion}}</option>
+                     </select>
+                     {{persona.codigoGenero}}
+                     </p>
+           </div>
             <button (click)="save()" class="btn btn-danger">
                 Save
             </button>
