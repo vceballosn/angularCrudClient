@@ -35,7 +35,7 @@ export class AddComponent implements OnInit {
   } 
   save(){  
        alert("Genero "+this.persona.codigoGenero);   
-      if((this.persona.nombre == undefined )  || (this.persona.apellido == undefined)  || (this.persona.email ==undefined)){
+      if((this.persona.nombre == undefined )  || (this.persona.apellido == undefined)  || (this.persona.email ==undefined) || (this.persona.codigoGenero == undefined)|| (this.persona.codigoGenero == '0')){
          alert(" debe llenar todos los campos ");
       }else{ 
           this.service.createPersona(this.persona).subscribe(data=>{
